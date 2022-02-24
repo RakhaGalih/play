@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#90e0ef, #48cae4);
+  overflow: hidden;
+}
+.splash {
+  position: absolute;
+  border: 10px solid #48cae4;
+  animation: splash 3s linear infinite;
+  overflow: hidden;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.5;
+  transform: rotateX(60deg);
+}
+.i {
+  animation-delay: 0.1s;
+  border: 15px solid #48cae4;
+}
+@keyframes splash {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  70% {
+    width: 2500px;
+    height: 2500px;
+  }
+  100% {
+    width: 2000px;
+    height: 2000px;
+  }
+}
+.wrap {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(50px);
+}
+.cylinder {
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  background-color: #287271;
+  z-index: 2;
+  -webkit-box-reflect: below 1px linear-gradient(#0000, #0004);
+  overflow: visible;
+  cursor: pointer;
+  transition: 0.7s, background-color 0s;
+}
+
+.cylinder:hover {
+  height: 25px;
+  transform: translateY(12.5px);
+  background-color: #438483;
+}
+.cylinder:hover::before {
+  background-color: #438483;
+}
+.cylinder:hover .top {
+  background-color: #45aa9d;
+}
+.cylinder:hover .i-2 {
+  color: #ea8167;
+}
+.cylinder:hover .shadow {
+  transform: rotateX(60deg) translateY(225px) scale(1.12);
+}
+.cylinder:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #287271;
+  content: "";
+  transform: rotateX(60deg) translateY(200px);
+  z-index: 1;
+}
+
+.top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #2a9d8f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateX(60deg) translateY(-200px);
+  z-index: 3;
+  font-size: 50px;
+}
+
+.i-1 {
+  position: absolute;
+  font-size: 100px;
+  transform: translateX(5px);
+  color: white;
+}
+.i-2 {
+  position: absolute;
+  font-size: 70px;
+  color: #e76f51;
+}
+
+.shadow {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #287271;
+  transform: rotateX(60deg) translateY(225px) scale(1.25);
+  filter: blur(25px);
+  opacity: 0.5;
+  z-index: 1;
+  transition: 0.7s;
+}
